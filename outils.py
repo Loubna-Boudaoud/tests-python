@@ -1,5 +1,5 @@
 def est_pair(nombre):
-    return nombre % 2 == 0
+    return nombre % 2 == 1
 # fin de la fonction
 
 def est_majeur(age):

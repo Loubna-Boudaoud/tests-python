@@ -14,15 +14,21 @@ def test_est_pair():
     assert est_pair(8)
 
 
-def test_est_premier():
-    # 2 est le plus petit nombre premier
-    assert est_premier(2)
-    # Grand premier pour vérifier la boucle jusqu'à sqrt(n)
-    assert est_premier(97)
-    # 1 n'est pas premier (règle : < 2 → False)
-    assert not est_premier(1)
-    # 9 = 3×3 : composite, doit renvoyer False
-    assert not est_premier(9)
+
+@pytest.mark.parametrize("n, attendu", [
+    (0, False),
+    (1, False),
+    (2, True),
+    (3, True),
+    (4, False),
+    (5, True),
+    (25, False),
+    (49, False),
+    (97, True),
+])
+def test_est_premier(n, attendu):
+    assert est_premier(n) == attendu
+
 
 
 def test_est_majeur():

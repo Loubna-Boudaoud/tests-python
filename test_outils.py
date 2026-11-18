@@ -12,6 +12,10 @@ def test_est_pair():
     # Cas impair : on attend False (assert not …)
     assert not est_pair(7)
     assert est_pair(8)
+    
+def test_est_pair_decimal():
+    with pytest.raises(TypeError):
+        est_pair(2.5)
 
 
 
@@ -28,6 +32,9 @@ def test_est_pair():
 ])
 def test_est_premier(n, attendu):
     assert est_premier(n) == attendu
+
+def test_est_premier_negatif():
+    assert not est_premier(-7)
 
 
 

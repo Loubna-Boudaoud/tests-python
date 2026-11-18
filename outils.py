@@ -1,5 +1,11 @@
 def est_pair(nombre):
     return nombre % 2 == 0
+
+def est_pair(n):
+    if type(n) is not int:
+        raise TypeError("Un entier est attendu")
+
+    return n % 2 == 0
 # fin de la fonction
 
 def est_majeur(age):
